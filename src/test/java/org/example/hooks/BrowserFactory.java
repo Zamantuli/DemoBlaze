@@ -1,5 +1,6 @@
 package org.example.hooks;
 
+import org.example.pages.AddToCartPage;
 import org.example.pages.HomePage;
 import org.example.pages.ProductsPage;
 import org.openqa.selenium.WebDriver;
@@ -10,5 +11,6 @@ public class BrowserFactory {
 
     protected HomePage homePage = PageFactory.initElements(driver, HomePage.class);
     protected ProductsPage productsPage = PageFactory.initElements(driver, ProductsPage.class);
+    protected AddToCartPage addToCartPage = PageFactory.initElements(driver, AddToCartPage.class);
 }
 

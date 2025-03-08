@@ -1,6 +1,6 @@
 package org.example.hooks;
 
-import io.cucumber.java.AfterAll;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,15 +10,13 @@ public class Hook {
 
     @Before
     public void setup() {
-        System.out.println("Before hook");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.demoblaze.com/index.html");
     }
 
-    @AfterAll
-    public static void tearDown() {
-        System.out.println("After hook");
+    @After
+    public void tearDown() {
         driver.quit();
     }
 
