@@ -59,4 +59,8 @@ public abstract class BasePage {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).build().perform();
     }
+
+    public void goToCart() {
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("cartur")))).click();
+    }
 }

@@ -20,11 +20,11 @@ public class ProductsStepsDef extends BrowserFactory {
     public void i_should_see_the_Product_added_message() {
         assertEquals(addToCartPage.getAlertText(), "Product added.");
     }
-
-    @Given("^I click on the (.+) product$")
-    public void i_click_to_add_product(String product) {
-        productsPage.clickProduct(product);
-    }
+//
+//    @Given("^I click on the (.+) product$")
+//    public void i_click_to_add_product(String product) {
+//        productsPage.clickProduct(product);
+//    }
 
     @And("I click the ok button")
     public void i_click_the_ok_button() {
