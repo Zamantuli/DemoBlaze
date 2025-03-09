@@ -4,6 +4,7 @@ import org.example.utils.Products;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -28,7 +29,7 @@ public abstract class BasePage {
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public List<WebElement> getWebElements(WebElement elements) {
+    public List<WebElement> getWebElements(List<WebElement> elements) {
         return wait.until(ExpectedConditions.visibilityOfAllElements(elements));
     }
 
@@ -52,5 +53,10 @@ public abstract class BasePage {
 
     public void goHome() {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.className("nav-link")))).click();
+    }
+
+    public void scrollToItem(WebElement element) {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).build().perform();
     }
 }
